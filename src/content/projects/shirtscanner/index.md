@@ -3,8 +3,6 @@ title: "Discover Shirtscanner: The Ultimate Sports Apparel Search Engine in Chin
 description: "Effortlessly explore, compare, and purchase sports clothing from over 55 shops in China with Shirtscanner"
 date: "08/24/2024"
 ---
-import { Image } from 'astro:assets';
-
 ## What is Shirtscanner?
 
 [Shirtscanner](https://www.shirtscanner.com) is a cutting-edge online platform designed to simplify the way you search for and buy sports apparel, especially from vendors in China. Whether you're looking for team jerseys, workout gear, or any other sportswear, Shirtscanner makes it easy to find the best options from a wide array of shops—all in one place.
