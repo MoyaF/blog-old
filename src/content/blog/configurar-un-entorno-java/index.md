@@ -4,30 +4,36 @@ description: "Guía completa para configurar tu entorno de desarrollo Java. Desd
 date: "2024-08-21"
 draft: true
 ---
+## Introduccion
 
-## Configurar un entorno de desarrollo en Linux y Mac
+En este tutorial, aprenderás cómo configurar un entorno de desarrollo en Linux y Mac, usando herramientas clave como SDKMAN! para instalar Java y Maven.  Al final de este tutorial, tendrás un entorno configurado para empezar a desarrollar aplicaciones en Java independientemente de tu sistema operativo.
+
+## Configurar un entorno de desarrollo en Linux y MacOS
 ### Instalar SDKMAN!
 
-SDKMAN! es una herramienta que permite instalar, actualizar y usar diferentes versiones de un mismo SDK u otras herramientas como Maven o Gradle de forma sencilla, directamente desde la línea de comandos.
+Para instalar todas nuestras herramientas de desarrollo utilizaremos **SDKMAN!**, una poderosa utilidad que facilita la instalación, actualización y gestión de versiones con comandos simples, sin necesidad de configuraciones manuales complejas. Todo se configura automáticamente y estará listo para usarse de inmediato.
 
-Para instalarlo, abrimos una terminal y corremos el siguiente comando
+#### Ejecutar el comando de instalación
+
+Primero, abre una terminal en tu sistema y ejecuta el siguiente comando para instalar **SDKMAN!**:
 
 ```bash
 curl -s "https://get.sdkman.io" | bash
 ```
+Este comando requiere que tengas instalados `curl`, `unzip`, `zip` y `sed`. Estas herramientas suelen venir preinstaladas en la mayoría de los sistemas operativos. En caso de que alguna falte, el instalador te informará cuál es necesaria para completar el proceso.
 
-Seguimos las instrucciones y al finalizar, para activar la herramienta, podemos abrir una nueva terminal o correr siguiente comando en la misma terminal:
+#### Verificar la instalación
+Una vez que **SDKMAN!** esté instalado, abre una nueva terminal o ejecuta el siguiente comando en la terminal actual para inicializar el entorno:
 
 ```bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 ```
-
-Finalmente, corremos el siguiente comando para verificar que la instalación finalizó correctamente:
+Asegúrate de que **SDKMAN!** se haya instalado correctamente ejecutando el siguiente comando:
 
 ```bash
 sdk version
 ```
-Deberiamos ver un mensaje similar al siguiente en la consola:
+Deberías ver un resultado similar a este:
 
 ```
 SDKMAN!
@@ -35,28 +41,34 @@ script: 5.18.2
 native: 0.4.6
 ```
 
-Para mas informacion podemos chequear la [documentación oficial](https://sdkman.io/). 
+#### Informacion adicional
+Con **SDKMAN!** no solo puedes instalar el JDK y otras herramientas relacionadas, sino que también puedes gestionar múltiples versiones de estas herramientas desde distintos proveedores. Esto te permite cambiar fácilmente entre versiones según las necesidades de cada proyecto. Aunque un uso más avanzado de esta herramienta queda fuera del alcance de este tutorial, podes explorar más sobre sus funcionalidades en la [documentación oficial de SDKMAN!](https://sdkman.io/).
 
 ---
 
 ### Instalar Java
 
-Con SDKMAN! instalado, podemos comenzar a instalar el JDK (Java Development Kit). El JDK es un conjunto de herramientas para crear aplicaciones en Java.
-Incluye el compilador, la maquina virtual de Java (JVM) y la biblioteca de standard de Java ()
+Con **SDKMAN!** ya instalado, podemos proceder a instalar el **JDK** (Java Development Kit). El **JDK** es un conjunto de herramientas esenciales para desarrollar aplicaciones en Java. Incluye el compilador, la máquina virtual de Java (JVM) y las bibliotecas estándar de Java.
 
-Para hacerlo, debemos ejecutar el siguiente comando. 
+#### Ejecutar el comando de instalación
+
+Para instalarlo, ejecuta el siguiente comando en tu terminal:
 
 ```bash
 sdk install java
 ```
-Esto va a instalarnos la ultima version estable del JDK. SDKMAN! Se va a encargar de configurar todo por nosotros.
-Para verificar que todo funciona correctamente podemos usar el comando
+
+Este comando instalará la última versión estable del **JDK**. Gracias a **SDKMAN!** la configuracion del mismo se realizará de forma automática.
+
+#### Verificar la instalación
+
+Una vez completada la instalación, puedes verificar que Java se haya instalado correctamente con el siguiente comando:
 
 ```bash
 java -version
 ```
 
-y ver que obtenemos un output similar al siguiente en la consola
+Deberías ver una salida similar a la siguiente en tu terminal:
 
 ```
 openjdk version "21.0.2" 2024-01-16
@@ -67,24 +79,27 @@ OpenJDK 64-Bit Server VM GraalVM CE 21.0.2+13.1 (build 21.0.2+13-jvmci-23.1-b30,
 
 ### Instalar Maven
 
-Al igual que instalamos Java. Podemos instalar Maven usando SDKMAN!.
-Maven es una herramienta que vamos a utilizar para construir y administrar nuestros proyectos Java.
-Con maven vamos a gestionar las dependencias nuestros proyectos, compilar, ejecutar los tests y empaqutar nuestras aplicaciones (crear los archivos ejecutables .jar).
+Al igual que con **Java**, podemos instalar **Maven** utilizando **SDKMAN!**. **Maven** es una herramienta clave para construir y gestionar proyectos **Java**. Con **Maven**, podrás gestionar las dependencias de tu proyecto, compilar el código, ejecutar pruebas y empaquetar la aplicación en archivos ejecutables como .jar.
 
-Para hacerlo, debemos ejecutar el siguiente comando. 
+#### Ejecutar el comando de instalación
+
+Para instalar **Maven**, ejecuta el siguiente comando en tu terminal:
 
 ```bash
 sdk install maven
 ```
 
-Esto va a instalarnos la ultima version estable de Maven. SDKMAN!, de nuevo, va a configurar Maven y utilizar la version de Java que hayamos instalado previamente.
-Para verificar que la instalación fue correcta, podemos utilizar el comando 
+Este comando descargará e instalará la última versión estable de **Maven**. **SDKMAN!** se encargará de configurar **Maven** correctamente, utilizando la versión de **Java** que instalaste previamente.
+
+#### Verificar la instalación
+
+Para comprobar que **Maven** se instaló correctamente, puedes ejecutar el siguiente comando:
 
 ```bash
 mvn -v
 ```
 
-Este deberia devolvernos una salida por consola similar a esto
+La salida en la consola debería ser algo similar a:
 
 ```
 Apache Maven 3.9.8 (36645f6c9b5079805ea5009217e36f2cffd34256)
