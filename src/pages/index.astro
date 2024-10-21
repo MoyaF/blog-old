@@ -1,7 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
-import { SITE, HOME, SOCIALS } from "@consts";
+import { SITE, HOME, SOCIALS, WORK_EXPERIENCE } from "@consts";
 import ArrowCard from "@components/ArrowCard.astro";
 import Link from "@components/Link.astro";
 import { getCollection } from "astro:content";
@@ -12,12 +12,11 @@ const blog = (await getCollection("blog"))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
 
-const projects: CollectionEntry<"projects">[] = (
-  await getCollection("projects")
-)
+const projects: CollectionEntry<"projects">[] = (await getCollection("projects"))
   .filter((project) => !project.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
+
 ---
 
 <Layout title={HOME.TITLE} description={HOME.DESCRIPTION} lang="en">
@@ -27,8 +26,8 @@ const projects: CollectionEntry<"projects">[] = (
         Fausto Moya
       </h1>
       <div class="space-y-16">
-        <section>
-          <article class="space-y-4">
+        <section class="space-y-4">
+          <article>
             <span class="animate">
               <p>
                 Engineer by skill and creator at heart, I've spent years designing, developing, and deploying software.
