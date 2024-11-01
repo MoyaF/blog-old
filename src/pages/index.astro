@@ -12,7 +12,7 @@ const blog = (await getCollection("blog"))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
 
-const projects: CollectionEntry<"projects">[] = (await getCollection("projects"))
+const projects = (await getCollection("projects"))
   .filter((project) => !project.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
@@ -30,9 +30,9 @@ const projects: CollectionEntry<"projects">[] = (await getCollection("projects")
           <article>
             <span class="animate">
               <p>
-                Engineer by skill and creator at heart, I've spent years designing, developing, and deploying software.
-                I've contributed to projects across various fields, from e-commerce to container shipping planning, from fintech to food delivery.
-                Whether in a startup where the tech team could fit in a single car or at a tech giant serving millions of users, I've been passionate about building solutions that make an impact.
+                Engineer by skill and creator at heart, I've spent years <b>designing</b>, <b>developing</b>, and <b>deploying software</b>.
+                I've contributed to projects across <b>various fields</b>, from <b>e-commerce</b> to <b>container shipping planning</b>, from <b>fintech</b> to <b>food delivery</b>.
+                Whether in a <b>startup</b> where the tech team could fit in a single car or at a <b>tech giant</b> serving millions of users, I've been passionate about <b>building solutions that make an impact</b>.
               </p>
             </span>
             <span class="animate">
@@ -43,8 +43,8 @@ const projects: CollectionEntry<"projects">[] = (await getCollection("projects")
             </span>
             <span class="animate">
               <p>
-                I'm currently working as a Technical Lead at <a href="https://www.aholddelhaize.com/about" target="_blank">Ahold Delhaize</a>, 
-                where I focus on modernizing internal tools, delivering high-quality software, and driving business value at a rapid pace. 
+                I'm currently working as a <b>Technical Lead</b> at <a href="https://www.aholddelhaize.com/about" target="_blank">Ahold Delhaize</a>, 
+                where I focus on modernizing internal tools, <b>delivering high-quality software</b>, and <b>driving business value</b> at a rapid pace. 
                 Before this, I worked at <a href="https://www.routescanner.com/about" target="_blank">Routescanner</a>, 
                 helping customers reduce CO2 emissions by <a href="https://www.routescanner.com/features/route-optimizer" target="_blank">optimizing their trade lanes</a> with our innovative engine. 
                 I've also contributed to other notable organizations like <a href="https://www.mercadolibre.com.ar/institucional" target="_blank">Mercado Libre</a>, 
@@ -53,9 +53,9 @@ const projects: CollectionEntry<"projects">[] = (await getCollection("projects")
             </span>
             <span class="animate">
               <p>
-                I also dedicate time to tutoring university students in programming, databases, and testing.
+                I also dedicate time to <b>tutoring</b> university students in programming, databases, and testing.
                 This blog was created from those sessions to provide useful documentation for my students and,
-                hopefully, to support the Spanish-speaking community interested in exploring software engineering.
+                hopefully, to <b>support the Spanish-speaking community</b> interested in exploring software engineering.
               </p>
             </span>
           </article>
