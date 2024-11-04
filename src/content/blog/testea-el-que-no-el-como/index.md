@@ -5,40 +5,39 @@ date: "2024-11-01"
 draft: false
 ---
 
-## Given-When-Then
+## Given-When-Then y Arrange-Act-Assert
 
-El movimiento del <a href="https://cucumber.io/docs/bdd/" target="_blank">Behavior Driven Development</a> (BDD) popularizó el uso de la estructura **Given-When-Then**. La idea es especificar el comportamiento deseado en un lenguaje más intuitivo el cual tiende a dirigir el pensamiento de forma más natural hacia el comportamiento (en lugar de hacia los detalles de la implementación). La idea de este enfoque se basa en dividir la escritura de un escenario (o test) en tres secciones:
+¿Cómo podemos pensar nuestros tests para que sean comprensibles y se enfoquen en el comportamiento? **Given-When-Then** y **Arrange-Act-Assert** son dos formas similares de estructurar los tests para que sean más fáciles de entender a primera vista.
 
-- **Given**: Describe el estado inicial o las precondiciones antes de ejecutar el comportamiento especificado en la prueba.
+Ambas estrategias tienen como objetivo expresar nuestros tests en un lenguaje más intuitivo, el cual nos dirija el pensamiento hacia el comportamiento en lugar de hacia los detalles de la implementación. La idea es simple. Debemos dividir nuestros tests en **tres secciones**:
+ 
+- **Given** o **Arrange**: Describe el estado inicial o las precondiciones antes de ejecutar el comportamiento especificado en la prueba.
 
-- **When**: Representa la acción o evento que desencadena el comportamiento a probar.
+- **When** o **Act**: Representa la acción o evento que desencadena el comportamiento a probar.
 
-- **Then**: Verifica el resultado esperado (assert) o la interacción con algún colaborador (mock verify).
+- **Then** o **Assert**: Verifica el resultado esperado (assert) o la interacción con algún colaborador (mock verify).
 
-Otro patrón similar es Arrange-Act-Assert. Este enfoque se originó en la comunidad de <a href="http://www.extremeprogramming.org/" target="_blank">eXtreme Programming</a> (XP). Aunque los pasos tienen diferentes nombres, el concepto subyacente es el mismo: estructurar las pruebas de manera que sean claras y comprensibles, facilitando la identificación del contexto, la acción y la verificación del resultado.
 
 Para ilustrar este concepto con un ejemplo en código, analicemos el siguiente caso:
 
 ```java
 @Test
 void haveTheBalanceIncreasedAfterDeposit() {
+    // Given a new bank account
     var bankAccount = new BankAccount();
 
+    // When a deposit is made
     bankAccount.deposit(10);
 
+    // Then the balance is increased
     assertThat(bankAccount.balance()).isEqualTo(10);
 }
 ```
+Al estructurar nuestros test de esta manera, logramos que sean **mas claros** y **comprensibles**, haciendo mas fácil identificar el **contexto**, la **acción** y la **verificación** del resultado.  Si sentimos que alguna de las secciones es muy grande, es un signo de que nuestro test esta haciendo mucho y necesita mas enfoque.
 
-En este fragmento de código, primero creamos un objeto `BankAccount`, que representa una nueva cuenta bancaria. Este paso establece el contexto inicial de la prueba (**Given**). A continuación, realizamos una acción al depositar 10 en la cuenta (**When**). Nuestro objetivo es observar cómo se modifica el estado de la cuenta después de esta operación. Finalmente, verificamos el resultado de la acción utilizando una aserción que asegura que el saldo de la cuenta sea igual a 10 (**Then**). Este enfoque estructurado permite entender fácilmente la intención detrás de cada paso en la prueba.
+## Enfocate en el comportamiento, no en la implementación.
 
-## Comportamiento > Implementación
-
-Si bien las pruebas nos proporcionan certeza al alertarnos de inmediato sobre cualquier cambio, este mismo aspecto puede resultar problemático. Incluso el cambio más pequeño, que podría parecer irrelevante para el propósito de la prueba, puede provocar su fallo.
-
-Por ejemplo, si modificamos la implementación interna del método `balance()`, el test debería continuar pasando siempre que la lógica del método sea correcta. Sin embargo, el test no puede discernir si `balance()` simplemente retorna un atributo de `BankAccount` o si está realizando cálculos complejos a partir de una lista de depósitos y extracciones para determinar el saldo final.
-
-Al analizar el objeto que estamos probando, es fundamental preguntarnos cuál es el comportamiento deseado que queremos verificar y cuáles detalles de implementación son irrelevantes y no deberían estar anclados en nuestro test. Esto nos ayuda a mantener nuestros test enfocados y menos susceptibles a cambios que no afectan la funcionalidad principal que estamos validando.
+Un test debería comprobar una sola cosa y hacerlo bien, comunicando claramente su intención. Los enfoques **Given-When-Then** y **Arrange-Act-Assert** nos invitan a diseñar nuestras pruebas en función del comportamiento esperado, en lugar de enfocarnos en los detalles internos de cada interacción. Al centrarnos en **"qué"** debe hacer el sistema, en lugar de **"cómo"** lo hace, nuestras pruebas se vuelven **más robustas** y menos propensas a **fallar por cambios menores** en la implementación. Esto nos ayuda a escribir tests que no solo se mantienen útiles a lo largo del tiempo, sino que también funcionan como documentación actualizada del propósito de nuestro código.
 
 ## Referencias
 - <a href="https://martinfowler.com/bliki/GivenWhenThen.html" target="_blank">Martin Fowler - Given When Then</a>
