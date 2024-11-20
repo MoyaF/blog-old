@@ -49,7 +49,7 @@ export const WORK_EXPERIENCE: WorkExperience = [
     company: "Routescanner",
     role: "Senior Software Engineer",
     technologies: ["Kotlin", "Spring", "Postgres", "GraphQL", "ActiveMQ", "AWS"],
-    description: `I led the design and implementation of a Trade Lane reporting and optimization tool, significantly enhancing data analysis and reporting capabilities. I optimized API response times, achieving a uniform 200 milliseconds for all data sets, compared to previous times of 2 seconds for small sets and 10 seconds for large sets.\nI successfully migrated 29 services to AWS, establishing infrastructure as code and implementing new CI/CD pipelines that resulted in a 30% reduction in operational costs. Additionally, I reduced deployment times by 25% through enhancements to the testing suite, GitHub Actions pipeline, and AWS Fargate integration, ensuring faster and more efficient software delivery.`,
+    description: "I led the design and implementation of a Trade Lane reporting and optimization tool, significantly enhancing data analysis and reporting capabilities. I optimized API response times, achieving a uniform 200 milliseconds for all data sets, compared to previous times of 2 seconds for small sets and 10 seconds for large sets.\nI successfully migrated 29 services to AWS, establishing infrastructure as code and implementing new CI/CD pipelines that resulted in a 30% reduction in operational costs. Additionally, I reduced deployment times by 25% through enhancements to the testing suite, GitHub Actions pipeline, and AWS Fargate integration, ensuring faster and more efficient software delivery.",
     start: new Date('2022-05-01'),
     end: new Date('2024-08-01'),
     link: ""
