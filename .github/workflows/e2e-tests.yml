@@ -1,0 +1,19 @@
+name: Playwright Tests
+
+on:
+  deployment_status:
+jobs:
+  run-e2es:
+    if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success' && github.ref != 'ref/head/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Install packages
+        run: bun install && bunx playwright install --with-deps
+      - name: Run tests
+        run: bunx playwright test
+        env:
+          BASE_URL: ${{ github.event.deployment_status.environment_url }}
