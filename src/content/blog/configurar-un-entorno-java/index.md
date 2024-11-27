@@ -4,11 +4,13 @@ description: "Guía completa para configurar tu entorno de desarrollo Java. Desd
 date: "2024-08-21"
 draft: true
 ---
+
 ## Introduccion
 
-En este tutorial, aprenderás cómo configurar un entorno de desarrollo en Linux y Mac, usando herramientas clave como SDKMAN! para instalar Java y Maven.  Al final de este tutorial, tendrás un entorno configurado para empezar a desarrollar aplicaciones en Java independientemente de tu sistema operativo.
+En este tutorial, aprenderás cómo configurar un entorno de desarrollo en Linux y Mac, usando herramientas clave como SDKMAN! para instalar Java y Maven. Al final de este tutorial, tendrás un entorno configurado para empezar a desarrollar aplicaciones en Java independientemente de tu sistema operativo.
 
 ## Configurar un entorno de desarrollo en Linux y MacOS
+
 ### Instalar SDKMAN!
 
 Para instalar todas nuestras herramientas de desarrollo utilizaremos **SDKMAN!**, una poderosa utilidad que facilita la instalación, actualización y gestión de versiones con comandos simples, sin necesidad de configuraciones manuales complejas. Todo se configura automáticamente y estará listo para usarse de inmediato.
@@ -20,19 +22,23 @@ Primero, abre una terminal en tu sistema y ejecuta el siguiente comando para ins
 ```bash
 curl -s "https://get.sdkman.io" | bash
 ```
+
 Este comando requiere que tengas instalados `curl`, `unzip`, `zip` y `sed`. Estas herramientas suelen venir preinstaladas en la mayoría de los sistemas operativos. En caso de que alguna falte, el instalador te informará cuál es necesaria para completar el proceso.
 
 #### Verificar la instalación
+
 Una vez que **SDKMAN!** esté instalado, abre una nueva terminal o ejecuta el siguiente comando en la terminal actual para inicializar el entorno:
 
 ```bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 ```
+
 Asegúrate de que **SDKMAN!** se haya instalado correctamente ejecutando el siguiente comando:
 
 ```bash
 sdk version
 ```
+
 Deberías ver un resultado similar a este:
 
 ```
@@ -42,6 +48,7 @@ native: 0.4.6
 ```
 
 #### Informacion adicional
+
 Con **SDKMAN!** no solo puedes instalar el JDK y otras herramientas relacionadas, sino que también puedes gestionar múltiples versiones de estas herramientas desde distintos proveedores. Esto te permite cambiar fácilmente entre versiones según las necesidades de cada proyecto. Aunque un uso más avanzado de esta herramienta queda fuera del alcance de este tutorial, podes explorar más sobre sus funcionalidades en la [documentación oficial de SDKMAN!](https://sdkman.io/).
 
 ---
@@ -75,6 +82,7 @@ openjdk version "21.0.2" 2024-01-16
 OpenJDK Runtime Environment GraalVM CE 21.0.2+13.1 (build 21.0.2+13-jvmci-23.1-b30)
 OpenJDK 64-Bit Server VM GraalVM CE 21.0.2+13.1 (build 21.0.2+13-jvmci-23.1-b30, mixed mode, sharing)
 ```
+
 ---
 
 ### Instalar Maven
@@ -118,4 +126,7 @@ TBD
 ### Instalar Maven
 
 TBD
+
+```
+
 ```

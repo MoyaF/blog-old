@@ -15,7 +15,6 @@ const projects = (await getCollection("projects"))
   .filter((project) => !project.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
-
 ---
 
 <Layout title={HOME.TITLE} description={HOME.DESCRIPTION} lang="en">
@@ -29,32 +28,62 @@ const projects = (await getCollection("projects"))
           <article>
             <span class="animate">
               <p>
-                Engineer by skill and creator at heart, I've spent years <b>designing</b>, <b>developing</b>, and <b>deploying software</b>.
-                I've contributed to projects across <b>various fields</b>, from <b>e-commerce</b> to <b>container shipping planning</b>, from <b>fintech</b> to <b>food delivery</b>.
-                Whether in a <b>startup</b> where the tech team could fit in a single car or at a <b>tech giant</b> serving millions of users, I've been passionate about <b>building solutions that make an impact</b>.
-              </p>
-            </span>
-            <span class="animate">
-                <p>
-                  Thanks to my career, I had the opportunity to embark on an exciting journey of migration.
-                  I left my beloved 🇦🇷 Argentina  to embrace new experiences, meet incredible people, and immerse myself in the rich culture of 🇳🇱 The Netherlands. 
-                </p>
-            </span>
-            <span class="animate">
-              <p>
-                I'm currently working as a <b>Technical Lead</b> at <a href="https://www.aholddelhaize.com/about" target="_blank">Ahold Delhaize</a>, 
-                where I focus on modernizing internal tools, <b>delivering high-quality software</b>, and <b>driving business value</b> at a rapid pace. 
-                Before this, I worked at <a href="https://www.routescanner.com/about" target="_blank">Routescanner</a>, 
-                helping customers reduce CO2 emissions by <a href="https://www.routescanner.com/features/route-optimizer" target="_blank">optimizing their trade lanes</a> with our innovative engine. 
-                I've also contributed to other notable organizations like <a href="https://www.mercadolibre.com.ar/institucional" target="_blank">Mercado Libre</a>, 
-                <a href="https://www.uala.com.ar/nosotros" target="_blank">Ualá</a>, and <a href="https://about.rappi.com/about-us" target="_blank">Rappi</a>.
+                Engineer by skill and creator at heart, I've spent years <b
+                  >designing</b
+                >, <b>developing</b>, and <b>deploying software</b>. I've
+                contributed to projects across <b>various fields</b>, from <b
+                  >e-commerce</b
+                > to <b>container shipping planning</b>, from <b>fintech</b> to <b
+                  >food delivery</b
+                >. Whether in a <b>startup</b> where the tech team could fit in a
+                single car or at a <b>tech giant</b> serving millions of users, I've
+                been passionate about <b
+                  >building solutions that make an impact</b
+                >.
               </p>
             </span>
             <span class="animate">
               <p>
-                I also dedicate time to <b>tutoring</b> university students in programming, databases, and testing.
-                This blog was created from those sessions to provide useful documentation for my students and,
-                hopefully, to <b>support the Spanish-speaking community</b> interested in exploring software engineering.
+                Thanks to my career, I had the opportunity to embark on an
+                exciting journey of migration. I left my beloved 🇦🇷 Argentina to
+                embrace new experiences, meet incredible people, and immerse
+                myself in the rich culture of 🇳🇱 The Netherlands.
+              </p>
+            </span>
+            <span class="animate">
+              <p>
+                I'm currently working as a <b>Technical Lead</b> at <a
+                  href="https://www.aholddelhaize.com/about"
+                  target="_blank">Ahold Delhaize</a
+                >, where I focus on modernizing internal tools, <b
+                  >delivering high-quality software</b
+                >, and <b>driving business value</b> at a rapid pace. Before this,
+                I worked at <a
+                  href="https://www.routescanner.com/about"
+                  target="_blank">Routescanner</a
+                >, helping customers reduce CO2 emissions by <a
+                  href="https://www.routescanner.com/features/route-optimizer"
+                  target="_blank">optimizing their trade lanes</a
+                > with our innovative engine. I've also contributed to other notable
+                organizations like <a
+                  href="https://www.mercadolibre.com.ar/institucional"
+                  target="_blank">Mercado Libre</a
+                >,
+                <a href="https://www.uala.com.ar/nosotros" target="_blank"
+                  >Ualá</a
+                >, and <a
+                  href="https://about.rappi.com/about-us"
+                  target="_blank">Rappi</a
+                >.
+              </p>
+            </span>
+            <span class="animate">
+              <p>
+                I also dedicate time to <b>tutoring</b> university students in programming,
+                databases, and testing. This blog was created from those sessions
+                to provide useful documentation for my students and, hopefully, to
+                <b>support the Spanish-speaking community</b> interested in exploring
+                software engineering.
               </p>
             </span>
           </article>
