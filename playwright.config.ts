@@ -4,7 +4,6 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-
 export default defineConfig({
   testDir: "./test",
   fullyParallel: true,
@@ -16,7 +15,7 @@ export default defineConfig({
   use: {
     baseURL: process.env.CI ? process.env.BASE_URL : "http://localhost:4321",
     trace: "on-first-retry",
-    screenshot: 'only-on-failure',
+    screenshot: "only-on-failure",
   },
 
   projects: [
