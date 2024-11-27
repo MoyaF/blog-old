@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "PAGEFIND_FORCE_LANGUAGE=en astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "bunx playwright test"
   },
   "dependencies": {
     "@astrojs/check": "0.9.4",
@@ -25,7 +26,9 @@
     "typescript": "5.7.2"
   },
   "devDependencies": {
+    "@playwright/test": "^1.49.0",
     "@tailwindcss/typography": "0.5.15",
+    "dotenv": "^16.4.5",
     "pagefind": "1.2.0",
     "prettier": "3.4.1",
     "prettier-plugin-astro": "0.14.1",
