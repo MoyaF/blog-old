@@ -1,11 +1,11 @@
 import { test, expect } from '@playwright/test';
 
-test('home page has my name visible as heading', async ({ page }) => {
+test('has my name visible as heading', async ({ page }) => {
   await page.goto('/');
   await expect(page.getByRole('heading', { name: 'Fausto Moya' })).toBeVisible();
 });
 
-test('home page has a link that redirects to my LinkedIn profile', async ({ page }) => {
+test('has a link that redirects to my LinkedIn profile', async ({ page }) => {
   await page.goto('/');
   const linkedInPage = page.waitForEvent('popup');
   const link = await page.getByLabel('Fausto Moya on LinkedIn');
@@ -15,7 +15,7 @@ test('home page has a link that redirects to my LinkedIn profile', async ({ page
   expect((await linkedInPage).url()).toContain("https://www.linkedin.com/");
 });
 
-test('home page has a link that redirects to my GitHub profile', async ({ page }) => {
+test('has a link that redirects to my GitHub profile', async ({ page }) => {
   await page.goto('/');
   const gitHubPromise = page.waitForEvent('popup');
   const link = await page.getByLabel('Fausto Moya on GitHub');
@@ -25,7 +25,7 @@ test('home page has a link that redirects to my GitHub profile', async ({ page }
   await expect(gitHubPage).toHaveURL('https://github.com/MoyaF');
 });
 
-test('home page has a link that has my email address', async ({ page }) => {
+test('has a link that redirects to my email address', async ({ page }) => {
   await page.goto('/');
   const emailTo = page.getByLabel('Email Fausto Moya');
   await expect(emailTo).toHaveAttribute('href', 'mailto:faustomoya99@gmail.com');
