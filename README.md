@@ -1,8 +1,8 @@
 # Personal Blog
+
 [![Playwright Tests](https://github.com/MoyaF/blog/actions/workflows/e2e-tests.yml/badge.svg?branch=main)](https://github.com/MoyaF/blog/actions/workflows/e2e-tests.yml)
 
 Welcome to my personal blog project! This blog is based on [astro-micro](https://github.com/trevortylerlee/astro-micro). It features a clean and modern design, supports markdown for writing posts, and includes a simple commenting system.
-
 
 ## Getting Started
 
