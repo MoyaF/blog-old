@@ -3,6 +3,8 @@ title: "Testea el 'qué', no el 'cómo'"
 description: "Estructura para definir pruebas centradas en comportamiento."
 date: "2024-11-01"
 draft: false
+tags:
+  - test
 ---
 
 ## Given-When-Then y Arrange-Act-Assert
